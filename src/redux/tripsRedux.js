@@ -9,21 +9,44 @@ export const getFilteredTrips = ({trips, filters}) => {
   if(filters.searchPhrase){
     const pattern = new RegExp(filters.searchPhrase, 'i');
     output = output.filter(trip => pattern.test(trip.name));
+
   }
   
   // TODO - filter by duration
   if(filters.duration){
-    const duration = new RegExp(filters.duration, 'i');
-    output = output.filter(trip => duration.test(trip.days));
+    const durationMin = filters.duration.from;
+    const durationMax = filters.duration.to;
+    output = output.filter(trip => trip.days >= durationMin && trip.days <= durationMax);
   }
 
   // // TODO - filter by tags
   if(filters.tags){
-    const tags = new RegExp(filters.tags, 'g');
+    const tags = new RegExp(filters.tags, 'i');
     output = output.filter(trip => tags.test(trip.tags));  
   } 
 
   // TODO - sort by cost descending (most expensive goes first)
+  if(trips){
+    output = trips.sort((a , b) => { 
+      b = Number(b.cost.replace(/[^0-9.-]+/g,''));
+      a = Number(a.cost.replace(/[^0-9.-]+/g,''));
+
+      return b - a;
+    });
+  } 
+    
+    
+  // let array = [];
+  // let sortedArray =[];
+  // let numberArray =[];
+  // output.filter(x => array.push(x.cost))
+  // array.forEach(number => sortedArray.push(number.replace('$', ''))); 
+  // sortedArray.forEach(number => numberArray.push(parseInt(number)));    
+  // output = numberArray.sort(function(a, b){return b-a});
+  // console.log(sorted);
+  // array.sort(function(a, b){return a-b}); 
+  // }
+
   return output;
 };
 
