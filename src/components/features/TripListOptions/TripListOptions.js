@@ -10,7 +10,7 @@ class TripListOptions extends React.Component {
       this.props.addTag(tag);
     } else {
       console.log('Removing tag', tag);
-      this.props.removeTag(tag);
+      this.props.removeTag('');
     }
   }
 
