@@ -13,7 +13,7 @@ const OrderSummary = (props) =>(
 OrderSummary.propTypes = {
   cost: PropTypes.string, 
   tripCost: PropTypes.string,
-  orderOption: PropTypes.node,
+  orderOption: PropTypes.object,
 };
 
 export default OrderSummary;
