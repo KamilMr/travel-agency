@@ -25,7 +25,6 @@ const OrderOption = ({name, type, id, setOrderOption, ...otherProps}) => {
         <OptionComponent
           {...otherProps}
           setOptionValue={value => setOrderOption({[id]: value})}
-
         />
       </div>
 
@@ -36,11 +35,6 @@ const OrderOption = ({name, type, id, setOrderOption, ...otherProps}) => {
 
 OrderOption.propTypes = {
   name: PropTypes.string,
-//   car-rental: PropTypes.string,
-//   accomodation: PropTypes.string,
-//   features: PropTypes.array,
-//   adults: PropTypes.number,
-//   chldren: PropTypes.string,
 };
 
 export default OrderOption;
