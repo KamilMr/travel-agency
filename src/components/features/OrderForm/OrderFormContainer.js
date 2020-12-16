@@ -11,7 +11,7 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   setOrderOption: action => dispatch(setOrderOption(action)),
 });
 

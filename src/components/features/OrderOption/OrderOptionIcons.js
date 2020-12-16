@@ -32,7 +32,7 @@ OrderOptionIcons.propTypes = {
   currentValue: PropTypes.object,
   setOptionValue: PropTypes.func,
   values: PropTypes.array,
-  required: PropTypes.node,
+  required: PropTypes.bool,
 
 };
 
