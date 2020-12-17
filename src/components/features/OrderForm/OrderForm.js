@@ -1,6 +1,5 @@
 import React from 'react';
 import OrderSummary from './OrderSummary.js';
-// import style from './OrderForm.scss';
 import PropTypes from 'prop-types';
 import {Row, Col} from 'react-flexbox-grid'; 
 import pricing from '../../../../src/data/pricing.json';
