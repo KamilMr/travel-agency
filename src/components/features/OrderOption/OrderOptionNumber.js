@@ -4,12 +4,12 @@ import styles from './OrderOption.scss';
 // import {formatPrice} from '../../../utils/formatPrice';
 
 
-const OrderOptionNumber = (props) => (
+const OrderOptionNumber = (props) => { console.log(props); return (
   <div className={styles.number}>
     <input 
       className={styles.inputSmall} 
       type='number' 
-      //value={props.currentValue.adults} //ask P
+      value={props.currentValue.adults} 
       min={props.limits.min}
       max={props.limits.max}
       onChange={event => props.setOptionValue(event.currentTarget.value)}
@@ -18,6 +18,7 @@ const OrderOptionNumber = (props) => (
     {props.price}
   </div>
 );
+};
 
 OrderOptionNumber.propTypes = {
   currentValue: PropTypes.object,
